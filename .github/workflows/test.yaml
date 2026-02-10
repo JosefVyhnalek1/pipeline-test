@@ -33,3 +33,10 @@ jobs:
         run: |
           ls -la
           tree
+  call_action_from_other_repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        uses: JosefVyhnalek1/devops-actions/example_action@main
+        with:
+          message: 'HELLO GITHUB'
