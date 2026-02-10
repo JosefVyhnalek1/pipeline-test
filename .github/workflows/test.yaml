@@ -16,6 +16,7 @@ jobs:
 
   write_to_console_on_pull_request:
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
     steps:
       - name: Write message to console on pull request
         run: echo "Pull request approved"
