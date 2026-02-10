@@ -25,7 +25,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ls -la without pull
-        run: ls -la
+        run: |
+          ls -la
+          tree
       - uses: actions/checkout@v4
       - name: ls -la with pull
-        run: ls -la
+        run: |
+          ls -la
+          tree
