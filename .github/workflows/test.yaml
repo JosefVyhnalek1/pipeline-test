@@ -4,12 +4,19 @@ on:
   push:
     branches: 'main'
   workflow_dispatch:
+  pull_request:
 
 
 jobs:
   write_to_console:
     runs-on: ubuntu-latest
     steps:
-      - name: Write message to konzole
+      - name: Write message to console
         run: echo "Hello github actions"
+
+  write_to_console_on_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write message to console on pull request
+        run: echo "Pull request approved"
 
