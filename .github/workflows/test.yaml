@@ -21,3 +21,11 @@ jobs:
       - name: Write message to console on pull request
         run: echo "Pull request approved"
 
+  pull_code_from_repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ls -la without pull
+        run: ls -la
+      - uses: actions/checkout@v4
+      - name: ls -la with pull
+        run: ls -la
