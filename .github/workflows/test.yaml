@@ -40,3 +40,21 @@ jobs:
         uses: JosefVyhnalek1/devops-actions/example_action@main
         with:
           message: 'HELLO GITHUB'
+
+  set_output:
+    runs-on: ubuntu-latest
+    name: Set output for next job
+    outputs:
+      setOutputJobId: ${{ steps.IdOfOutputSettingJob.outputs.jobId }}
+    steps:
+      - name: set id
+        id: IdOfOutputSettingJob
+        run: echo "jobId=${{ github.job }}"
+
+  get_output:
+    runs-on: ubuntu-latest
+    needs: set_output
+
+    steps:
+      - name: echo set output id
+        run: echo needs.set_output.outputs.setOutputJobId
