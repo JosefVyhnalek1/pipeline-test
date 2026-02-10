@@ -1,0 +1,15 @@
+name: test
+
+on:
+  push:
+    branches: 'main'
+  workflow_dispatch:
+
+
+jobs:
+  write_to_console:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write message to konzole
+        run: echo "Hello github actions"
+
