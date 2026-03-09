@@ -17,6 +17,7 @@ jobs:
       - name: Prepare env
         run: |
             echo '${{ secrets.ENV }}' > .env
+          cat .env
 
   write_to_console_on_pull_request:
     runs-on: ubuntu-latest
