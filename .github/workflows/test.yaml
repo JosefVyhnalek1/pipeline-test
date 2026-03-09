@@ -8,11 +8,15 @@ on:
 
 
 jobs:
+
   write_to_console:
     runs-on: ubuntu-latest
     steps:
       - name: Write message to console
         run: echo "Hello github actions"
+      - name: Prepare env
+        run: |
+            echo "${{ secrets.ENV }}" > .env
 
   write_to_console_on_pull_request:
     runs-on: ubuntu-latest
